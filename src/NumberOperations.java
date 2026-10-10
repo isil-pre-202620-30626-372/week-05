@@ -17,12 +17,26 @@ public class NumberOperations {
 
         do {
             int digit = number % 10;
-            digits.add(digit);
+            digits.add(0,digit);
             number /= 10;
 
         } while (number > 0);
 
         return digits;
 
+    }
+
+    public static boolean isPalindrome(int number) {
+        int originalNumber = number;
+        int reversedNumber = 0;
+
+         do {
+            int digit = number % 10;
+            reversedNumber = reversedNumber*10 + digit;
+            number /= 10;
+
+        } while (number > 0);
+
+        return originalNumber == reversedNumber;
     }
 }
